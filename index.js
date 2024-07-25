@@ -5,11 +5,10 @@ import express from 'express'
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
 const PORT = 3000
+const URL = "https://telegraf-bot-eta.vercel.app";
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send('...Server is Running...')
-})
+app.use(await bot.createWebhook({domain: URL}))
 
 bot.on('text', (ctx) => {
     ctx.reply('Hello World')
