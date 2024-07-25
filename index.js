@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     res.send('...Server is running...')
 })
 
-bot.command('text', (ctx) => {
+bot.on('text', (ctx) => {
     ctx.reply('Hello World')
 })
 
