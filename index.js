@@ -8,9 +8,13 @@ const PORT = 3000
 const URL = "https://telegraf-bot-eta.vercel.app";
 const app = express();
 
-app.use(await bot.createWebhook({domain: URL}))
+app.use(await bot.createWebhook({ domain: URL }))
 
-bot.on('text', (ctx) => {
+app.get('/', (req, res) => {
+    res.send('...Server is running...')
+})
+
+bot.command('text', (ctx) => {
     ctx.reply('Hello World')
 })
 
