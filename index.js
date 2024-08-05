@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 })
 
 bot.on('text', (ctx) => {
-    ctx.reply('Hello World')
+    ctx.reply('Привет Серега рад тебя видеть.')
 })
 
 
